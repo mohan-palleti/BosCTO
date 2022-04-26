@@ -36,7 +36,7 @@ function SignIn() {
           Sign-In
         </button>
         <div className="col-auto">
-          <span className="form-text">
+          <span className="form-text fw-lighter">
             By Signing In, <b> I agree to Terms and Conditions. </b>
           </span>
         </div>

@@ -8,7 +8,7 @@ function Navbar() {
           <a className="navbar-brand" href="#">
             PetCare
             <img
-              className="img-fluid"
+              className="img-fluid w-25"
               src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-puppy-dog-training-flaticons-flat-flat-icons.png"
             />
           </a>
