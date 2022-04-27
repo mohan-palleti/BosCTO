@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 function Table() {
   let navigate = useNavigate();
   const [fcity, setFcity] = useState("");
@@ -33,6 +34,7 @@ function Table() {
     setFcity(c);
     setFverified(v);
   };
+  console.log("keys from uuid", uuidv4());
   //console.log(pet);
   return (
     <div>
@@ -87,20 +89,36 @@ function Table() {
           <option value="DSC">High-Low</option>
         </select>
       </div>
-      <table className="table bg-light w-75 border m-auto">
-        <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">City</th>
-            <th scope="col">Address</th>
-            <th scope="col">Capacity</th>
-            <th scope="col">Cost per Day</th>
-            <th scope="col">Verified</th>
-            <th scope="col">Rating</th>
+      <table className="table bg-light w-75 border m-auto" key={uuidv4()}>
+        <thead key={uuidv4()}>
+          <tr key={uuidv4()}>
+            <th key={uuidv4()} scope="col">
+              Id
+            </th>
+            <th key={uuidv4()} scope="col">
+              Name
+            </th>
+            <th key={uuidv4()} scope="col">
+              City
+            </th>
+            <th key={uuidv4()} scope="col">
+              Address
+            </th>
+            <th key={uuidv4()} scope="col">
+              Capacity
+            </th>
+            <th key={uuidv4()} scope="col">
+              Cost per Day
+            </th>
+            <th key={uuidv4()} scope="col">
+              Verified
+            </th>
+            <th key={uuidv4()} scope="col">
+              Rating
+            </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody key={uuidv4()}>
           {petData
             .filter(
               (ele) =>
@@ -109,24 +127,30 @@ function Table() {
             .map((ele, i) => (
               <>
                 <tr
-                  key={ele.id}
+                  key={uuidv4()}
                   onClick={() => {
                     navigate(`/listing/${ele.id}`);
                   }}
                 >
-                  <th scope="row">{+(i + 1)}</th>
-                  <td>{ele.name}</td>
-                  <td style={{ width: "20vw" }}>
-                    <img src={ele.city} width="30%" alt="location" />
+                  <th scope="row" key={uuidv4()}>
+                    {+(i + 1)}
+                  </th>
+                  <td key={uuidv4()}>{ele.name}</td>
+                  <td style={{ width: "20vw" }} key={uuidv4()}>
+                    <img
+                      key={uuidv4()}
+                      src={ele.city}
+                      width="30%"
+                      alt="location"
+                    />
                   </td>
-                  <td>
-                    {" "}
+                  <td key={uuidv4()}>
                     <a href="https://www.google.com/maps">link</a>
                   </td>
-                  <td>{ele.capacity}</td>
-                  <td>{ele.costperday}</td>
-                  <td>{ele.verified}</td>
-                  <td>{ele.Rating}</td>
+                  <td key={uuidv4()}>{ele.capacity}</td>
+                  <td key={uuidv4()}>{ele.costperday}</td>
+                  <td key={uuidv4()}>{ele.verified}</td>
+                  <td key={uuidv4()}>{ele.Rating}</td>
                 </tr>
               </>
             ))}
