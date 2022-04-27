@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import Petstore from "./Components/Petstore";
 import { AnimatePresence } from "framer-motion";
+import UserHome from "./Components/UserHome";
 
 function App() {
   const location = useLocation();
@@ -14,7 +15,7 @@ function App() {
     <div className="App">
       <AnimatePresence>
         <Routes location={location} key={location}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<UserHome />} />
           <Route path="/listing/:id" element={<Petstore />} />
           <Route path="/listing/create" element={<AddpetStore />} />
           <Route path="*" element={"not Found"} />

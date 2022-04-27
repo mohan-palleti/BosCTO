@@ -89,36 +89,20 @@ function Table() {
           <option value="DSC">High-Low</option>
         </select>
       </div>
-      <table className="table bg-light w-75 border m-auto" key={uuidv4()}>
-        <thead key={uuidv4()}>
-          <tr key={uuidv4()}>
-            <th key={uuidv4()} scope="col">
-              Id
-            </th>
-            <th key={uuidv4()} scope="col">
-              Name
-            </th>
-            <th key={uuidv4()} scope="col">
-              City
-            </th>
-            <th key={uuidv4()} scope="col">
-              Address
-            </th>
-            <th key={uuidv4()} scope="col">
-              Capacity
-            </th>
-            <th key={uuidv4()} scope="col">
-              Cost per Day
-            </th>
-            <th key={uuidv4()} scope="col">
-              Verified
-            </th>
-            <th key={uuidv4()} scope="col">
-              Rating
-            </th>
+      <table className="table bg-light w-75 border m-auto">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">City</th>
+            <th scope="col">Address</th>
+            <th scope="col">Capacity</th>
+            <th scope="col">Cost per Day</th>
+            <th scope="col">Verified</th>
+            <th scope="col">Rating</th>
           </tr>
         </thead>
-        <tbody key={uuidv4()}>
+        <tbody>
           {petData
             .filter(
               (ele) =>
