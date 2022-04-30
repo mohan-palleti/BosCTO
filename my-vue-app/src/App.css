@@ -42,7 +42,7 @@ button {
 }
 .slider {
   position: relative;
- margin-top: 5vh;
+padding: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
